@@ -1,0 +1,23 @@
+{
+  "name": "playwrightprojject",
+  "version": "1.0.0",
+  "description": "A hands-on starter project using Playwright end-to-end testing with Javascript &amp; TypeScript.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janardhan008/PlaywrightProjject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Janardhan008/PlaywrightProjject/issues"
+  },
+  "homepage": "https://github.com/Janardhan008/PlaywrightProjject#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.1"
+  }
+}
