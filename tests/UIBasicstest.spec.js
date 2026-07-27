@@ -1,23 +1,16 @@
 const {test} = require('@playwright/test');
 
-
-test('First Playwright test', async () =>
-{
-//playwright code-
-//step1 -open brower
-//step2 - enter u/p 2seconds
-
-//step3 - click
-
+test('Page Playwright test', async ({page}) => {
+    await page.goto("https://google.com");
+    //
 });
 
-const { test, expect } = require('@playwright/test');
 
-test('test description here', async ({ page }) => {
-    // your test steps go here
-    await page.goto('https://example.com');
-    await expect(page).toHaveTitle(/Example/);
-});
+
+// test.only('Page Playwright test', async ({page}) => {
+//     await page.goto("https://google.com");
+//     //
+// });
 
 // Quick summary of the anatomy:
 
