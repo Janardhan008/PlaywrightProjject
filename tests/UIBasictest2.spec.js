@@ -6,3 +6,4 @@ test('Browser Context Playwright test', async ({browser}) => {
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 });
+
