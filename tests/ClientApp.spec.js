@@ -23,6 +23,8 @@ test('@Webst Client App login', async ({ page }) => {
    }
 
    await page.locator("[routerlink*='cart']").click();
+   
+
    //await page.pause();
 
    await page.locator("div li").first().waitFor();

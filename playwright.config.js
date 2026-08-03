@@ -14,9 +14,12 @@ const config = ({
   reporter: 'html',
 
   use: {
-    browserName: 'chromium',
-    headless: false,
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-  },
+  actionTimeout: 10 * 1000,     // 10 seconds max per action (click, fill, etc.)
+  navigationTimeout: 30 * 1000, // 30 seconds max per navigation (page.goto, etc.)
+  browserName: 'chromium',      // run tests in Chromium by default
+  headless: false,              // run browser with a visible UI window
+  screenshot: 'on',             // capture a screenshot for every test
+  trace: 'on',                  // off,on — record a full trace for every test
+},
 });
 module.exports = config;
