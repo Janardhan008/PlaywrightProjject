@@ -1,16 +1,13 @@
 const { test, expect } = require('@playwright/test');
  
- 
- 
- 
 test('@Webst Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
-   const email = "anshika@gmail.com";
+   const email = "janardhanp008@gmail.com";
    const productName = 'ZARA COAT 3';
    const products = page.locator(".card-body");
-   await page.goto("https://rahulshettyacademy.com/client");
+   await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
    await page.getByPlaceholder("email@example.com").fill(email);
-   await page.getByPlaceholder("enter your passsword").fill("Iamking@000");
+   await page.getByPlaceholder("enter your passsword").fill("Pass@1234");
    await page.getByRole('button',{name:"Login"}).click();
    await page.waitForLoadState('networkidle');
    await page.locator(".card-body b").first().waitFor();
