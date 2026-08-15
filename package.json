@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "A hands-on starter project using Playwright end-to-end testing with Javascript &amp; TypeScript.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression": "npx playwright test",
+    "webTests": "npx playwright test --grep @Web",
+    "APITests": "npx playwright test --grep @API",
+    "SafariNewConfig": "npx playwright test --config playwright.config.safari.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Janardhan008/PlaywrightProjject.git"
@@ -11,13 +16,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Janardhan008/PlaywrightProjject/issues"
   },
   "homepage": "https://github.com/Janardhan008/PlaywrightProjject#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.0",
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.1.1",
+    "allure": "^3.14.3",
+    "allure-playwright": "^3.10.2",
+    "typescript": "^5.9.3"
   }
 }
