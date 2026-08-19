@@ -3,29 +3,29 @@ class OrdersHistoryPage
 constructor(page)
 {
     this.page = page;
-this.ordersTable = page.locator("tbody");
-this.rows = page.locator("tbody tr");
-this.orderdIdDetails =page.locator(".col-text");
+    this.ordersTable = page.locator("tbody");
+    this.rows = page.locator("tbody tr");
+    this.orderIdDetails = page.locator(".col-text");
 }
 async searchOrderAndSelect(orderId)
 {
-
     await this.ordersTable.waitFor();
-for(let i =0; i<await this.rows.count(); ++i)
- {
-    const rowOrderId =await this.rows.nth(i).locator("th").textContent();
-    if (orderId.includes(rowOrderId))
+    const rowCount = await this.rows.count();
+    for (let i = 0; i < rowCount; i++)
     {
-        await this.rows.nth(i).locator("button").first().click();
-        break;
+        const row = this.rows.nth(i);
+        const rowOrderId = (await row.locator("th").textContent()).trim();
+        if (orderId.includes(rowOrderId))
+        {
+            await row.locator("button").first().click();
+            return;
+        }
     }
- }
-
 }
 
 async getOrderId()
 {
-    return await this.orderdIdDetails.textContent();
+    return (await this.orderIdDetails.textContent()).trim();
 }
 
 }

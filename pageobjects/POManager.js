@@ -1,4 +1,6 @@
 const {LoginPage} = require('./LoginPage');
+const {LoginPagePractise} = require('./LoginPagePractise');
+const {ShopPage} = require('./ShopPage');
 const {DashboardPage} = require('./DashboardPage');
 const {OrdersHistoryPage} = require('./OrdersHistoryPage');
 const {OrdersReviewPage} = require('./OrdersReviewPage');
@@ -9,6 +11,8 @@ constructor(page)
 {
     this.page = page;
     this.loginPage = new LoginPage(this.page);
+    this.loginPagePractise = new LoginPagePractise(this.page);
+    this.shopPage = new ShopPage(this.page);
     this.dashboardPage = new DashboardPage(this.page);
     this.ordersHistoryPage = new OrdersHistoryPage(this.page);
     this.ordersReviewPage = new OrdersReviewPage(this.page);
@@ -20,6 +24,16 @@ constructor(page)
 getLoginPage()
 {
     return this.loginPage;
+}
+
+getLoginPagePractise()
+{
+    return this.loginPagePractise;
+}
+
+getShopPage()
+{
+    return this.shopPage;
 }
 
 getCartPage()
