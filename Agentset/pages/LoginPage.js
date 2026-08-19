@@ -5,6 +5,7 @@ class LoginPage {
     this.password = page.locator('#password');
     this.termsCheckbox = page.locator('#terms');
     this.signInButton = page.locator('#signInBtn');
+    this.errorMessage = page.locator('.alert-danger');
   }
 
   async enterUsername(username) {
@@ -19,8 +20,21 @@ class LoginPage {
     await this.termsCheckbox.check();
   }
 
+  async isCheckboxSelected() {
+    return await this.termsCheckbox.isChecked();
+  }
+
+  async selectRole(roleName) {
+    await this.page.locator(`input[value="${roleName.toLowerCase()}"]`).click();
+  }
+
   async clickSignIn() {
     await this.signInButton.click();
+  }
+
+  async getErrorMessage() {
+    await this.errorMessage.waitFor({ state: 'visible' });
+    return (await this.errorMessage.textContent()).trim();
   }
 }
 
